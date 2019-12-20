@@ -91,6 +91,21 @@ export const product = (id, params) => {
   })
 }
 
+export const productCategories = (params) => {
+  return axios({
+    url: 'product_categories',
+    method: 'get',
+    params: params
+  })
+}
+export const productCategory = (id, params) => {
+  return axios({
+    url: 'product_categories/' + id,
+    method: 'get',
+    params: params
+  })
+}
+
 const refreshToken = async(data) => {
   // 请求刷新接口
   return await axios({
@@ -143,6 +158,8 @@ export default {
   userPasswordReset,
   getToken,
   products,
-  product
+  product,
+  productCategory,
+  productCategories
 }
 

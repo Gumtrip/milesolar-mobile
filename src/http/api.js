@@ -2,10 +2,8 @@
 import axios from 'axios'
 import config from './config.js' // 导入默认配置
 import qs from 'qs' // 序列化请求数据，视服务端的要求
-import store from '../store/index'
 import { Toast } from 'mint-ui'
 import router from '@/router'
-import api from './interface'
 
 function dataTransform(rawData) {
   let data

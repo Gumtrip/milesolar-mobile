@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="mainBox">
     <section>
       <mt-swipe id="productImages" :show-indicators="false">
         <mt-swipe-item v-for="(img,key) in product.mid_image_group" :key="key" class="picBox">
@@ -9,28 +9,28 @@
     </section>
 
     <section>
-      <h3 class="proTitle" v-text="product.title" />
-      <p class="desc" v-text="product.brief" />
+      <h3 class="proTitle" v-text="product.title"></h3>
+      <p class="desc" v-text="product.brief"></p>
       <div class="BtnContainer">
         <mt-button type="primary" size="large">Inquiry</mt-button>
       </div>
     </section>
     <section>
       <mt-navbar v-model="selected" class="descTitles">
-        <mt-tab-item id="info_0_m">参数 1</mt-tab-item>
-        <mt-tab-item id="info_1_m">参数 2</mt-tab-item>
-        <mt-tab-item id="info_2_m">参数 3</mt-tab-item>
+        <mt-tab-item id="info_0_m">Feature</mt-tab-item>
+        <mt-tab-item id="info_1_m">Specification</mt-tab-item>
+        <mt-tab-item id="info_2_m">Application</mt-tab-item>
       </mt-navbar>
 
-      <mt-tab-container v-if="product.info_group" v-model="selected">
+      <mt-tab-container v-if="product.info_group" v-model="selected" class="contentContainer">
         <mt-tab-container-item id="info_0_m">
-          <div v-html="product.info_group.info_0_m" />
+          <div v-html="product.info_group.info_0_m"></div>
         </mt-tab-container-item>
         <mt-tab-container-item id="info_1_m">
-          <div v-html="product.info_group.info_1_m" />
+          <div v-html="product.info_group.info_1_m"></div>
         </mt-tab-container-item>
         <mt-tab-container-item id="info_2_m">
-          <div v-html="product.info_group.info_2_m" />
+          <div v-html="product.info_group.info_2_m"></div>
         </mt-tab-container-item>
       </mt-tab-container>
 
@@ -69,8 +69,15 @@ export default {
 
 <style lang="scss" scoped>
     .proTitle{color: #5d5d5d}
-    .desc{color: #888;margin: 10px 0}
+    .desc{color: #888;margin: 10px 0;
+      img{max-width: 100%;max-height: 100%}
+    }
+    .contentContainer /deep/{
+      img{max-width: 100%;max-height: 100%}
+    }
     .BtnContainer{text-align: right}
     #productImages{width: 100%;height: 32vh}
-    .descTitles{margin-bottom: 10px}
+    .descTitles /deep/{margin-bottom: 10px;
+      .mint-tab-item-label{font-size: 14px;}
+    }
 </style>

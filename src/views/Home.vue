@@ -1,9 +1,32 @@
 <template>
   <div>
-    这是主页
-    <router-link :to="{name:'product.show',params:{id:1}}">
-      酒店详情页
-    </router-link>
+    <div id="banner">
+      <img src="https://n1-q.mafengwo.net/s15/M00/13/5B/CoUBGV3zu8eAb3LQAAJlPpSYUwU357.jpg" alt="">
+    </div>
+    <div class="mainBox">
+      <section id="index_cell">
+        <router-link to="/">Products</router-link>
+        <router-link to="/">Case</router-link>
+        <router-link to="/">News</router-link>
+        <router-link to="/">
+
+          Contact
+        </router-link>
+      </section>
+      <section id="indexCategories">
+        <ul>
+          <li v-for="(category,key) in product_categories" :key="key">
+            <router-link to="/">
+              <div class="cate_pic">
+                <img :src="category.mid_img" alt="">
+              </div>
+              <h3 v-text="category.title"></h3>
+            </router-link>
+          </li>
+        </ul>
+      </section>
+
+    </div>
   </div>
 </template>
 
@@ -12,16 +35,33 @@ export default {
   name: 'Home',
   components: {},
   data() {
-    return {}
+    return {
+      product_categories: []
+    }
   },
   computed: {},
   created() {
-
+    this.getCategories()
   },
-  methods: {}
+  methods: {
+    getCategories() {
+      this.$api.productCategories({
+        depth: 1
+      }).then((response) => {
+        this.product_categories = response.data
+        console.log(this.product_categories)
+      })
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-
+  #banner{
+    img{display: block;max-width: 100%;max-height: 100%}
+  }
+  #index_cell{display: flex;justify-content: space-between;padding: 15px}
+  .cate_pic{text-align: center;
+    img{max-height: 100%;max-width: 100%;}
+  }
 </style>
