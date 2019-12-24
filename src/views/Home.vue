@@ -8,7 +8,7 @@
         <router-link to="/">Products</router-link>
         <router-link to="/">Case</router-link>
         <router-link to="/">News</router-link>
-        <router-link to="/">
+        <router-link :to="{name:'contact'}">
 
           Contact
         </router-link>
@@ -18,9 +18,9 @@
           <li v-for="(category,key) in product_categories" :key="key">
             <router-link to="/">
               <div class="cate_pic">
-                <img :src="category.mid_img" alt="">
+                <img :src="category.mid_img">
               </div>
-              <h3 v-text="category.title"></h3>
+              <h3 class="nowrap text_center" v-text="category.title"></h3>
             </router-link>
           </li>
         </ul>
@@ -57,11 +57,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../styles/variables";
   #banner{
     img{display: block;max-width: 100%;max-height: 100%}
   }
   #index_cell{display: flex;justify-content: space-between;padding: 15px}
   .cate_pic{text-align: center;
     img{max-height: 100%;max-width: 100%;}
+  }
+  #indexCategories{
+    a{display: block}
+    li{position: relative;margin-bottom:20px }
+    h3{position: absolute;bottom: 0;left: 0;width: 100%;background: $blue;color: #fff;padding: 10px; box-sizing: border-box }
   }
 </style>

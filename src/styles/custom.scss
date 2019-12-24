@@ -1,11 +1,15 @@
 @import "variables";
 body{margin: 0;width: 100%;overflow-x: hidden;background: #fff}
-p{margin: 0}
+
+h1,h2,h3,h4,h5,h6,p{margin: 0}
 .picBox{text-align: center;font-size: 0;overflow: hidden;
   span{content: ''; display: inline-block; width: 0;height: 100%; vertical-align: middle;}
   div.pic{display: inline-block;vertical-align: middle;}
   img{max-height: 100%;max-width: 100%}
 }
+.nowrap {white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.text_center {text-align: center}
+.text_right {text-align: right}
 .popupContainer {width: 100vw;height: 100vh;overflow-y: scroll}
 .wrapper{width: 95%;margin: 0 auto}
 .error_tips{line-height: 14px;color: $red !important;padding-top: 4px;}
@@ -16,6 +20,7 @@ input[type=pic_boxhidden] {display: none;height: 0;width: 0}
 ul {margin: 0;padding: 0;
   li{list-style: none}
 }
+.require-icon{color: $red}
 
 
 

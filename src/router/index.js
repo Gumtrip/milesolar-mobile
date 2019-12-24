@@ -19,6 +19,11 @@ const routes = [
     path: '/products/:id',
     name: 'product.show',
     component: () => import('@/views/product/Show')
+  },
+  {
+    path: '/contact_us',
+    name: 'contact',
+    component: () => import('@/views/contact/Index')
   }
 ]
 const router = new Router({

@@ -114,6 +114,14 @@ const refreshToken = async(data) => {
     data: data
   })
 }
+const storeMsg = async(data) => {
+  // 请求刷新接口
+  return await axios({
+    url: 'messages',
+    method: 'POST',
+    data: data
+  })
+}
 
 // 获取 Token
 const getToken = async() => {
@@ -160,6 +168,7 @@ export default {
   products,
   product,
   productCategory,
-  productCategories
+  productCategories,
+  storeMsg
 }
 
