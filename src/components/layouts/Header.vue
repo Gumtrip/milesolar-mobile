@@ -1,9 +1,9 @@
 <template>
   <div>
     <mt-header>
-      <router-link slot="left" to="/">
-        <mt-button icon="back">返回</mt-button>
-      </router-link>
+      <span v-if="$route.path!=='/'" slot="left">
+        <mt-button icon="back" @click="$router.back(-1)">Back</mt-button>
+      </span>
       <mt-button slot="right" icon="more" />
     </mt-header>
   </div>

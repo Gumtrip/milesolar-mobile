@@ -1,6 +1,6 @@
 <template>
   <div class="mainBox">
-    <section>
+    <section id="picGallery" class="proSection">
       <mt-swipe id="productImages" :show-indicators="false">
         <mt-swipe-item v-for="(img,key) in product.mid_image_group" :key="key" class="picBox">
           <img :src="img">
@@ -8,14 +8,14 @@
       </mt-swipe>
     </section>
 
-    <section>
+    <section id="proInfo" class="proSection">
       <h3 class="proTitle" v-text="product.title"></h3>
       <p class="desc" v-text="product.brief"></p>
       <div class="BtnContainer">
         <mt-button type="primary" size="large">Inquiry</mt-button>
       </div>
     </section>
-    <section>
+    <section class="proSection">
       <mt-navbar v-model="selected" class="descTitles">
         <mt-tab-item id="info_0_m">Feature</mt-tab-item>
         <mt-tab-item id="info_1_m">Specification</mt-tab-item>
@@ -68,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .proSection{margin-bottom: 20px}
     .proTitle{color: #5d5d5d}
     .desc{color: #888;margin: 10px 0;
       img{max-width: 100%;max-height: 100%}

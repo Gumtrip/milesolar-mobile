@@ -5,13 +5,10 @@
     </div>
     <div class="mainBox">
       <section id="index_cell">
-        <router-link to="/">Products</router-link>
+        <router-link :to="{name:'products'}">Products</router-link>
         <router-link to="/">Case</router-link>
         <router-link to="/">News</router-link>
-        <router-link :to="{name:'contact'}">
-
-          Contact
-        </router-link>
+        <router-link :to="{name:'contact'}">Contact</router-link>
       </section>
       <section id="indexCategories">
         <ul>

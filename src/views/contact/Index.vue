@@ -43,11 +43,11 @@ export default {
   data() {
     return {
       form: {
-        name: '123',
-        phone: '321',
-        email: '22dfdf2@qqq.com',
+        name: '',
+        phone: '',
+        email: '',
         skype: '',
-        msg: '3213'
+        msg: ''
       }
     }
   },
