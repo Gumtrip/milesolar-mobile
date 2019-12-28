@@ -8,12 +8,12 @@
       <mt-cell value="008613889943867" to="tel:008613889943867">
         <span slot="title"><i class="fa fa-mobile"></i> Phone:</span>
       </mt-cell>
-      <mt-cell value="13812341234@qq.com" >
+      <mt-cell value="13812341234@qq.com">
         <span slot="title"><i class="fa fa-skype"></i> Skype:</span>
       </mt-cell>
     </div>
 
-    <section v-if="product" id="productInfo">
+    <section v-if="product.length>0" id="productInfo">
       <h2 class="text_center">Product Info</h2>
       <div id="product">
         <div class="flexPic">
