@@ -82,7 +82,11 @@ export default {
       try {
         const res = await this.$api.storeMsg(this.form)
         if (res.status === 201) {
-          MessageBox.alert('Thanks For Your Message!').then(() => {
+          MessageBox({
+            'title':'Message',
+            'message':'Thanks For Your Message!',
+            'confirmButtonText':'OK'
+          }).then(() => {
             this.form.name = ''
             this.form.phone = ''
             this.form.email = ''
