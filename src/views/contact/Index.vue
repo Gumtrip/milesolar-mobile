@@ -132,4 +132,5 @@ export default {
     h4{margin-bottom: 10px;font-size: 24px}
     color: #555;
   }
+  .input{padding: 5px 0}
 </style>
