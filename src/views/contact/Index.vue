@@ -28,7 +28,6 @@
 
     <h2 class="text_center">Message</h2>
     <h3>If You Have Any Suggestions or Question For Us.Please Contact Us.</h3>
-
     <div>
       <mt-field v-model="form.name" class="input required" :attr="{required:true}" label="Name:" placeholder="Please Input Your Name">
       </mt-field>
@@ -83,9 +82,9 @@ export default {
         const res = await this.$api.storeMsg(this.form)
         if (res.status === 201) {
           MessageBox({
-            'title':'Message',
-            'message':'Thanks For Your Message!',
-            'confirmButtonText':'OK'
+            'title': 'Message',
+            'message': 'Thanks For Your Message!',
+            'confirmButtonText': 'OK'
           }).then(() => {
             this.form.name = ''
             this.form.phone = ''
