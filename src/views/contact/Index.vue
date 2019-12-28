@@ -2,13 +2,13 @@
   <div id="MsgBox" class="mainBox">
     <div id="contactInfo">
       <h4 class="text_center">Contact Info</h4>
-      <mt-cell value="info@milesolar.com">
+      <mt-cell value="info@milesolar.com" to="mailto:info@milesolar.com">
         <span slot="title"><i class="fa fa-envelope"></i> Email:</span>
       </mt-cell>
-      <mt-cell value="13812341234@qq.com">
+      <mt-cell value="008613889943867" to="tel:008613889943867">
         <span slot="title"><i class="fa fa-mobile"></i> Phone:</span>
       </mt-cell>
-      <mt-cell value="13812341234@qq.com">
+      <mt-cell value="13812341234@qq.com" >
         <span slot="title"><i class="fa fa-skype"></i> Skype:</span>
       </mt-cell>
     </div>
