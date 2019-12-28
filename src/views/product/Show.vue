@@ -12,7 +12,9 @@
       <h3 class="proTitle" v-text="product.title"></h3>
       <p class="desc" v-text="product.brief"></p>
       <div class="BtnContainer">
-        <mt-button type="primary" size="large">Inquiry</mt-button>
+        <router-link :to="{name:'contact',query:{product_id:id}}">
+          <mt-button type="primary" size="large">Inquiry</mt-button>
+        </router-link>
       </div>
     </section>
     <section class="proSection">
@@ -21,7 +23,6 @@
         <mt-tab-item id="info_1_m">Specification</mt-tab-item>
         <mt-tab-item id="info_2_m">Application</mt-tab-item>
       </mt-navbar>
-
       <mt-tab-container v-if="product.info_group" v-model="selected" class="contentContainer">
         <mt-tab-container-item id="info_0_m">
           <div v-html="product.info_group.info_0_m"></div>
@@ -46,7 +47,8 @@ export default {
   data() {
     return {
       selected: 'info_0_m',
-      product: ''
+      product: '',
+      id: null
     }
   },
   computed: {},
@@ -56,8 +58,8 @@ export default {
     this.getProduct(this.id)
   },
   methods: {
-    getProduct() {
-      this.$api.product(this.id, {
+    getProduct(id) {
+      this.$api.product(id, {
         'append': 'mid_image_group,info_group'
       }).then((response) => {
         this.product = response.data

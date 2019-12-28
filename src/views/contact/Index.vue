@@ -12,6 +12,20 @@
         <span slot="title"><i class="fa fa-skype"></i> Skype:</span>
       </mt-cell>
     </div>
+
+    <section v-if="product" id="productInfo">
+      <h2 class="text_center">Product Info</h2>
+      <div id="product">
+        <div class="flexPic">
+          <img :src="product.main_image" alt="">
+        </div>
+        <div class="desc">
+          <h3 v-text="product.title"></h3>
+        </div>
+      </div>
+
+    </section>
+
     <h2 class="text_center">Message</h2>
     <h3>If you have any suggestions or question for us.Please contact us.</h3>
 
@@ -43,16 +57,25 @@ export default {
   data() {
     return {
       form: {
+        product_id: null,
+        product_info: null,
         name: '',
         phone: '',
         email: '',
         skype: '',
         msg: ''
-      }
+      },
+      product: {}
     }
   },
   computed: {},
   created() {
+    const query = this.$route.query
+    this.form.product_id = query.product_id
+
+    if (this.form.product_id) {
+      this.getProduct(this.form.product_id)
+    }
   },
   methods: {
     async submitForm() {
@@ -60,13 +83,25 @@ export default {
         const res = await this.$api.storeMsg(this.form)
         if (res.status === 201) {
           MessageBox.alert('Thanks For Your Message!').then(() => {
-            this.form = { name: '', phone: '', email: '', skype: '', msg: '' }
+            this.form.name = ''
+            this.form.phone = ''
+            this.form.email = ''
+            this.form.skype = ''
+            this.form.msg = ''
           })
         }
       } catch (e) {
         console.log(e)
       }
+    },
+    getProduct(id) {
+      this.$api.product(id).then((response) => {
+        this.product = response.data
+        this.form.product_id = id
+        this.form.product_info = response.data
+      })
     }
+
   }
 }
 </script>
@@ -79,8 +114,17 @@ export default {
       input,textarea{border: 1px solid $light_grey;border-radius: 5px;padding: 6px 10px;box-sizing: border-box}}
     h2{margin-bottom: 10px}
     h3{margin-bottom: 20px;font-size: 16px;color: #666;padding-left:  10px}
+    p{padding-left: 10px;color: #555}
     .submitBtn{margin-top: 10px}
   }
+  #productInfo{margin-bottom: 10px;box-sizing: border-box;;
+    #product{display: flex;
+      .flexPic{border: 1px solid $light_grey;border-radius: 5px;width: 35%;box-sizing: border-box;overflow: hidden}
+      .desc{width: 65%;box-sizing: border-box;padding-left: 10px}
+    }
+    h3{padding: 5px 0;font-size: 16px;color: $grey}
+  }
+
   #contactInfo{margin-bottom: 20px;
     .fa{display: inline-block;width: 20px;}
     .fa-mobile{font-size: 26px}

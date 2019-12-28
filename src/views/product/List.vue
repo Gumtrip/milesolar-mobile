@@ -15,13 +15,17 @@
         </router-link>
       </li>
     </ul>
+    <Loading :loading="loading" :more_data="more_data"></Loading>
   </div>
 </template>
 
 <script>
+import Loading from '@/components/utils/Loading'
 export default {
   name: 'List',
-  components: {},
+  components: {
+    Loading
+  },
   data() {
     return {
       products: [],
@@ -42,7 +46,6 @@ export default {
           page: this.data_page
         })
         this.products = this.products.concat(res.data.data)
-        this.loading = false
         if (res.data.meta.current_page >= res.data.meta.last_page) {
           this.more_data = false
         }
