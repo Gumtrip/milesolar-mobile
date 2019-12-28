@@ -32,16 +32,13 @@
       <mt-field v-model="form.name" class="input required" :attr="{required:true}" label="Name:" placeholder="Please Input Your Name">
       </mt-field>
       <mt-field v-model="form.phone" class="input" label="Mobile:" placeholder="Please Input Your Mobile" type="tel">
-
       </mt-field>
       <mt-field v-model="form.email" class="input required" :attr="{required:true}" label="Email:" placeholder="Please Input Your Email" type="email">
 
       </mt-field>
       <mt-field v-model="form.skype" class="input" label="Skype:" placeholder="Please Input Your Skype">
-
       </mt-field>
       <mt-field v-model="form.msg" class="input required" :attr="{required:true}" label="Message:" placeholder="Please Input Your Message" type="textarea">
-
       </mt-field>
       <mt-button class="submitBtn" size="large" type="primary" @click="submitForm">Submit</mt-button>
     </div>
