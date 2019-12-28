@@ -2,7 +2,7 @@
   <div id="MsgBox" class="mainBox">
     <div id="contactInfo">
       <h4 class="text_center">Contact Info</h4>
-      <mt-cell value="123456789@qq.com">
+      <mt-cell value="info@milesolar.com">
         <span slot="title"><i class="fa fa-envelope"></i> Email:</span>
       </mt-cell>
       <mt-cell value="13812341234@qq.com">
