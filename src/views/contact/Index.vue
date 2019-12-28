@@ -17,7 +17,7 @@
       <h2 class="text_center">Product Info</h2>
       <div id="product">
         <div class="flexPic">
-          <img :src="product.main_image" alt="">
+          <img :src="product.main_image" :alt="product.title">
         </div>
         <div class="desc">
           <h3 v-text="product.title"></h3>
