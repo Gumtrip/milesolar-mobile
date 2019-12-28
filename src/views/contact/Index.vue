@@ -27,7 +27,7 @@
     </section>
 
     <h2 class="text_center">Message</h2>
-    <h3>If you have any suggestions or question for us.Please contact us.</h3>
+    <h3>If You Have Any Suggestions or Question For Us.Please Contact Us.</h3>
 
     <div>
       <mt-field v-model="form.name" class="input required" :attr="{required:true}" label="Name:" placeholder="Please Input Your Name">
