@@ -13,7 +13,7 @@
       </mt-cell>
     </div>
 
-    <section v-if="product.length>0" id="productInfo">
+    <section v-if="Object.keys(product).length > 0" id="productInfo">
       <h2 class="text_center">Product Info</h2>
       <div id="product">
         <div class="flexPic">
@@ -61,7 +61,7 @@ export default {
         skype: '',
         msg: ''
       },
-      product: {}
+      product: []
     }
   },
   computed: {},

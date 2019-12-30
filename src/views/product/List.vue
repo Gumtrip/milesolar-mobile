@@ -15,7 +15,7 @@
         </router-link>
       </li>
     </ul>
-    <Loading :loading="loading" :more_data="more_data"></Loading>
+    <Loading :loading="loading" :more-data="more_data"></Loading>
   </div>
 </template>
 

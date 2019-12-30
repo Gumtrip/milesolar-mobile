@@ -3,7 +3,7 @@
     <div class="text_center">
       <mt-spinner v-show="loading" type="snake" class="snake" color="#26a2ff"></mt-spinner>
     </div>
-    <div v-if="!more_data" class="text_center">
+    <div v-if="!moreData" class="text_center">
       <h3 class="alert alert-warning text-center" v-text="'No More Data!'"></h3>
     </div>
   </div>

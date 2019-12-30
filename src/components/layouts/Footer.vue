@@ -2,10 +2,14 @@
   <div>
     <mt-tabbar id="bottom_bar" :fixed="true">
       <mt-tab-item id="tab1" class="item">
-        <i class="fa fa-home"></i>
+        <router-link to="/">
+          <i class="fa fa-home"></i>
+        </router-link>
       </mt-tab-item>
       <mt-tab-item id="tab2" class="item">
-        <i class="fa fa-phone"></i>
+        <a href="tel:008613889943867">
+          <i class="fa fa-phone"></i>
+        </a>
       </mt-tab-item>
       <mt-tab-item id="tab3" class="item">
         <router-link :to="{name:'contact'}">
