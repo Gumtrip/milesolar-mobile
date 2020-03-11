@@ -1,9 +1,16 @@
 <template>
   <div>
-    <mt-header>
-      <span v-if="$route.path!=='/'" slot="left">
-        <mt-button icon="back" @click="$router.back(-1)">Back</mt-button>
-      </span>
+    <mt-header id="header" :class="{index:isIndex}">
+      <div id="logo" slot="left">
+        <div>
+
+        </div>
+      </div>
+
+      <div id="function" slot="right">
+        <span id="search" ><i class="fa fa-search"></i></span>
+        <span id="list" ><i class="fa fa-list"></i></span>
+      </div>
     </mt-header>
   </div>
 </template>
@@ -15,7 +22,11 @@ export default {
   data() {
     return {}
   },
-  computed: {},
+  computed: {
+    isIndex: function() {
+      return this.$route.path === '/'
+    }
+  },
   created() {
   },
   methods: {}
@@ -23,5 +34,12 @@ export default {
 </script>
 
 <style lang="scss" scoped >
+  @import "../../styles/variables";
 
+  #header{height: 50px;background: #fff}
+  #function{
+    i{font-size: 28px;color: $main_green}
+  }
+  #search{margin-right: 10px}
+  #list{}
 </style>
