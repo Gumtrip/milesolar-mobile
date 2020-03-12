@@ -122,7 +122,20 @@ const storeMsg = async(data) => {
     data: data
   })
 }
-
+export const articles = (params) => {
+  return axios({
+    url: 'articles',
+    method: 'get',
+    params: params
+  })
+}
+export const article = (id, params) => {
+  return axios({
+    url: 'articles/' + id,
+    method: 'get',
+    params: params
+  })
+}
 // 获取 Token
 const getToken = async() => {
   // 从缓存中取出 Token
@@ -169,6 +182,8 @@ export default {
   product,
   productCategory,
   productCategories,
+  article,
+  articles,
   storeMsg
 }
 
