@@ -24,16 +24,19 @@
       <ul>
         <li v-for="(article,key) in articles" :key="key" class="list">
           <router-link to="/">
-            <div class="newIcon">
-              <span>News</span>
+            <div class="txt">
+              <div class="newIcon">
+                <span>News</span>
+              </div>
+              <h3 class="newTitle" v-text="article.title"></h3>
+              <div class="newDate" v-text="article.create_date"></div>
             </div>
-            <h3 class="newTitle" v-text="article.title"></h3>
-            <div class="newDate" v-text="article.create_date"></div>
             <div class="newPic">
               <div class="pic flexPic">
                 <img :src="article.sm_img">
               </div>
             </div>
+
           </router-link>
         </li>
       </ul>
@@ -94,12 +97,12 @@ export default {
       .link_icon i{color: $main_green;font-size: 44px}
      }
   }
-  #indexNews{
-    a{display: block}
-    .list{margin-bottom: 20px;box-sizing: border-box; padding: 25px 6.5% 0;box-shadow: 0 0 10px #e9e9e9;}
+  #indexNews{width: 96%;margin: 0 auto;
+    a{display: block;box-shadow: 0 0 10px #e9e9e9;}
+    .list{margin-bottom: 20px;;}
     .newIcon span{background:$main_green;font-size: 14px;color: #000;padding: 5px 10px;display: inline-block;margin-bottom: 5px;}
-
-    .newTitle{max-height: 55px;
+    .txt{box-sizing: border-box; padding: 25px 6.5% 0}
+    .newTitle{max-height: 55px;font-family: "Open Sans Bold";
       font-size: 20px;
       color: #262a31;}
     .newDate{padding-top: 7px;font-size: 14px;color: #555;margin-bottom: 20px}

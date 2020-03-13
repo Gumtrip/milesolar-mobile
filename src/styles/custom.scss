@@ -1,5 +1,7 @@
 @import "variables";
-body{margin: 0;width: 100%;overflow-x: hidden;background: #fff}
+@import "fonts";
+body{margin: 0;width: 100%;overflow-x: hidden;background: #fff;font-family: "Open Sans";
+}
 
 h1,h2,h3,h4,h5,h6,p{margin: 0}
 .picBox{text-align: center;font-size: 0;overflow: hidden;
