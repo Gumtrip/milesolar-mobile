@@ -31,7 +31,7 @@
             <div class="newDate" v-text="article.create_date"></div>
             <div class="newPic">
               <div class="pic flexPic">
-                <img :src="article.mid_img">
+                <img :src="article.sm_img">
               </div>
             </div>
           </router-link>
