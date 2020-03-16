@@ -3,6 +3,7 @@
     <div id="banner">
       <img src="https://n1-q.mafengwo.net/s15/M00/13/5B/CoUBGV3zu8eAb3LQAAJlPpSYUwU357.jpg" alt="">
     </div>
+
     <section id="indexCategories">
       <ul>
         <li v-for="(category,key) in product_categories" :key="key">

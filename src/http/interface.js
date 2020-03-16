@@ -98,6 +98,13 @@ export const productCategories = (params) => {
     params: params
   })
 }
+export const productCategoryTree = (params) => {
+  return axios({
+    url: 'product_category_trees',
+    method: 'get',
+    params: params
+  })
+}
 export const productCategory = (id, params) => {
   return axios({
     url: 'product_categories/' + id,
@@ -182,6 +189,7 @@ export default {
   product,
   productCategory,
   productCategories,
+  productCategoryTree,
   article,
   articles,
   storeMsg
