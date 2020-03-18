@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="wrapper">
+    <h3 id="cateTitle" v-text="cateTitle"></h3>
+
     <ul
       id="contentBox"
       v-infinite-scroll="getProducts"
@@ -29,8 +31,9 @@ export default {
   data() {
     return {
       products: [],
+      cateTitle: 'ALL',
       loading: true,
-      data_page: 1,
+      page: 1,
       more_data: true
     }
   },
@@ -43,13 +46,13 @@ export default {
       if (this.more_data) {
         this.loading = true
         const res = await this.$api.products({
-          page: this.data_page
+          page: this.page
         })
         this.products = this.products.concat(res.data.data)
         if (res.data.meta.current_page >= res.data.meta.last_page) {
           this.more_data = false
         }
-        this.data_page++
+        this.page++
         this.loading = false
       }
     }
@@ -58,12 +61,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  #cateTitle{height: 37px;
+    line-height: 37px;
+    font-size: 24px;
+    color: #000;
+    font-family: "Open Sans Bold";
+  }
   .blank{height: 120vh;width: 100vw}
-  #contentBox{width: 100%;box-sizing: border-box;padding: 0 15px;display: flex;flex-wrap: wrap;
-    .item{width: 50%;box-sizing: border-box;margin-bottom: 10px}
-    .item:nth-child(odd){padding-right: 10px}
-    .item:nth-child(even){padding-left: 10px}
-    .pic{margin-bottom: 10px}
-    .title{font-size: 14px}
+  #contentBox{
+    margin-top:34px ;
+    box-sizing: border-box;;display: flex;flex-wrap: wrap;
+
+    .item{width: 50%;box-sizing: border-box;margin-bottom: 10px;padding:0 5px;overflow: hidden;
+      a{display: block;border: 1px solid #eee;padding-bottom: 10px}
+    }
+    .pic{margin-bottom: 10px;height: 168px;}
+    .title{font-size: 16px;color: #000;width: 90%;margin: 0 auto;font-family: "Open Sans Bold";height: 56px;overflow: hidden}
   }
 </style>
