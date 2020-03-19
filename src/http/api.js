@@ -72,9 +72,14 @@ export default function $axios(options) {
         if (config.method.toLocaleLowerCase() === 'post' || config.method.toLocaleLowerCase() === 'put' || config.method.toLocaleLowerCase() === 'delete') {
           config.data = qs.stringify(config.data)
         }
-
+        if (config.method.toLocaleLowerCase() === 'get') {
+          config.paramsSerializer = function(params) {
+            return qs.stringify(params, { arrayFormat: 'repeat' })
+          }
+        }
         return config
       },
+
       error => {
         // 请求错误时做些事(接口错误、超时等)
         // Tip: 4

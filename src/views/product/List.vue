@@ -33,12 +33,14 @@ export default {
       products: [],
       cateTitle: 'ALL',
       loading: true,
+      more_data: true,
       page: 1,
-      more_data: true
+      postData: {}
     }
   },
   computed: {},
   created() {
+    this.postData.category_id = this.$route.query.category_id
     this.getProducts()
   },
   methods: {
@@ -46,7 +48,7 @@ export default {
       if (this.more_data) {
         this.loading = true
         const res = await this.$api.products({
-          page: this.page
+          filter: this.postData
         })
         this.products = this.products.concat(res.data.data)
         if (res.data.meta.current_page >= res.data.meta.last_page) {
