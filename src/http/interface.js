@@ -4,7 +4,6 @@ import ls from '../utils/localStorage' // 倒入 api
 import { Toast } from 'mint-ui'
 import router from '@/router'
 import store from '../store/index'
-import qs from 'qs' // 序列化请求数据，视服务端的要求
 
 /* 将所有接口统一起来便于维护
  * 如果项目很大可以将 url 独立成文件，接口分成不同的模块

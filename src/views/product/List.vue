@@ -48,7 +48,8 @@ export default {
       if (this.more_data) {
         this.loading = true
         const res = await this.$api.products({
-          filter: this.postData
+          filter: this.postData,
+          page:this.page
         })
         this.products = this.products.concat(res.data.data)
         if (res.data.meta.current_page >= res.data.meta.last_page) {
