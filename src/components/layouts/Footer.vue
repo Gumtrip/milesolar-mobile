@@ -1,6 +1,10 @@
 <template>
-  <div>
-
+  <div  id="footer">
+    <ul class="wrapper">
+      <li v-for="(nav,key) in navList" :key="key">
+        <router-link :to="nav.url" v-text="nav.title"></router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -10,7 +14,12 @@ export default {
   components: {},
   data() {
     return {
-      popupVisible: false
+      popupVisible: false,
+      navList: [
+        { title: 'PRODUCTS', url: '/products' },
+        { title: 'ABOUT US', url: '/' },
+        { title: 'CONTACT US', url: '/' }
+      ]
     }
   },
   computed: {},
@@ -24,17 +33,9 @@ export default {
 
 <style scoped lang="scss">
   @import "../../styles/variables";
-  #contactBtn{
-    position: fixed;bottom: 10%;right: 10%;background: #007bff;color: #fff;border-radius: 50%;width: 50px;height: 50px;font-size: 26px;
-    ;display: flex;align-items: center;justify-content: center;
-    i{}
-  }
-  #contactBox{width: 100%;
-    ul{padding:  10px}
-    li{list-style: none;line-height: 36px;height: 36px;}
-  }
-  #bottom_bar{width: 100%;
-    .item{background: $blue;border-right: 1px solid #fff;box-sizing: border-box;border-radius: 5px}
-    .item i{font-size: 26px;color: #fff}
+  #footer{background: #343434;padding-top: 10px;
+    li{border-bottom: 1px solid $main_green;padding-bottom:10px;margin-bottom: 10px}
+    a{color: #fff;font-size: 18px;text-transform: uppercase;}
+
   }
 </style>

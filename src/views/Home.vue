@@ -1,7 +1,14 @@
 <template>
   <div>
     <div id="banner">
-      <img src="https://n1-q.mafengwo.net/s15/M00/13/5B/CoUBGV3zu8eAb3LQAAJlPpSYUwU357.jpg" alt="">
+      <ul>
+        <li v-for="(banner,key) in banners" :key="key">
+          <router-link :to="banner.url">
+            <img src="../assets/banner-1.jpg" alt="">
+          </router-link>
+        </li>
+      </ul>
+
     </div>
 
     <section id="indexCategories">
@@ -52,7 +59,10 @@ export default {
   data() {
     return {
       product_categories: [],
-      articles: []
+      articles: [],
+      banners: [
+        { image: '../../assets/banner-1.jpg', url: '/' }
+      ]
     }
   },
   computed: {},

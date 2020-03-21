@@ -3,9 +3,9 @@
     <div id="headerBlank" class="header"></div>
     <mt-header id="header" class="header" :class="{index:isIndex}">
       <div id="logo" slot="left" class="logo">
-        <div>
-
-        </div>
+        <router-link to="/">
+          <img src="../../assets/logo.png" alt="">
+        </router-link>
       </div>
 
       <div id="function" slot="right">
@@ -90,6 +90,9 @@ export default {
     i{font-size: 28px;color: $main_green}
     .closeBtn{text-align: center}
     .closeBtn i{font-size: 28px;width: 28px}
+  }
+  #logo{
+    img{max-height: 34px}
   }
   #search{margin-right: 10px}
   #searchBox{position: fixed;top: 0;right: -100%;width: 100%; background: #fff;transition:0.5s;z-index: 3;
