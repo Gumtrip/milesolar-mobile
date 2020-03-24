@@ -51,7 +51,7 @@ export default {
       showMask: false, // 遮罩层
       navList: [
         { title: 'Home', url: '/' },
-        { title: 'Product', url: 'products' }
+        { title: 'Product', url: '/products' }
       ]
     }
   },

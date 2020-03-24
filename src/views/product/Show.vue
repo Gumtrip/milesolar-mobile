@@ -1,5 +1,5 @@
 <template>
-  <div class="mainBox">
+  <div class="wrapper">
     <section id="picGallery" class="proSection">
       <mt-swipe id="productImages" :show-indicators="false">
         <mt-swipe-item v-for="(img,key) in product.mid_image_group" :key="key" class="picBox">
@@ -9,11 +9,11 @@
     </section>
 
     <section id="proInfo" class="proSection">
-      <h3 class="proTitle" v-text="product.title"></h3>
+      <h1 class="proTitle" v-text="product.title"></h1>
       <p class="desc" v-text="product.brief"></p>
       <div class="BtnContainer">
         <router-link :to="{name:'contact',query:{product_id:id}}">
-          <mt-button type="primary" size="large">Inquiry</mt-button>
+          <mt-button id="inquiryBtn" type="primary" size="large">Inquiry</mt-button>
         </router-link>
       </div>
     </section>
@@ -34,7 +34,6 @@
           <div v-html="product.info_group.info_2_m"></div>
         </mt-tab-container-item>
       </mt-tab-container>
-
     </section>
 
   </div>
@@ -70,17 +69,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../../styles/variables";
   .proSection{margin-bottom: 20px}
-    .proTitle{color: #5d5d5d}
-    .desc{color: #888;margin: 10px 0;
+    .proTitle{color: #5d5d5d;font-size: 20px}
+    .desc{color: #888;margin: 10px 0;font-size: 16px;line-height: 150%;
       img{max-width: 100%;max-height: 100%}
     }
     .contentContainer /deep/{
       img{max-width: 100%;max-height: 100%}
     }
+    #inquiryBtn{background: $main_green}
     .BtnContainer{text-align: right}
     #productImages{width: 100%;height: 32vh}
     .descTitles /deep/{margin-bottom: 10px;
       .mint-tab-item-label{font-size: 14px;}
+      .is-selected{border-bottom-color: $main_green;
+        color: $main_green;}
     }
 </style>

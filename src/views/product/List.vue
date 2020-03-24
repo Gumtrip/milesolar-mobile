@@ -2,6 +2,8 @@
   <div class="wrapper">
     <h3 id="cateTitle" v-text="cateTitle"></h3>
 
+
+
     <ul
       id="contentBox"
       v-infinite-scroll="getProducts"
@@ -17,6 +19,7 @@
         </router-link>
       </li>
     </ul>
+
     <Loading :loading="loading" :more-data="more_data"></Loading>
   </div>
 </template>
@@ -35,7 +38,8 @@ export default {
       loading: true,
       more_data: true,
       page: 1,
-      postData: {}
+      postData: {},
+      selected:0
     }
   },
   computed: {},

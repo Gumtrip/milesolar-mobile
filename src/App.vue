@@ -20,5 +20,4 @@ export default {
 <style lang="scss">
   @import './styles/normalize.css';
   @import './styles/custom.scss';
-  #app{padding-bottom: 80px}
 </style>
