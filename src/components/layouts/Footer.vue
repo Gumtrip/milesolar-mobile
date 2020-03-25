@@ -1,5 +1,5 @@
 <template>
-  <div  id="footer">
+  <div id="footer">
     <ul class="wrapper">
       <li v-for="(nav,key) in navList" :key="key">
         <router-link :to="nav.url" v-text="nav.title"></router-link>

@@ -2,10 +2,16 @@
   <div>
     <div id="headerBlank" class="header"></div>
     <mt-header id="header" class="header" :class="{index:isIndex}">
-      <div id="logo" slot="left" class="logo">
-        <router-link to="/">
-          <img src="../../assets/logo.png" alt="">
-        </router-link>
+
+      <div id="headerLeft" slot="left">
+        <div id="backIcon">
+          <mt-button icon="back" @click="$router.back(-1)">BACK</mt-button>
+        </div>
+        <div id="logo" class="logo">
+          <router-link to="/">
+            <img src="../../assets/logo.png" alt="">
+          </router-link>
+        </div>
       </div>
 
       <div id="function" slot="right">
@@ -85,7 +91,12 @@ export default {
   @import "../../styles/variables";
   .trans{transition: all 0.5s}
   .header{height: 50px;background: #fff}
-  #header{position: fixed;top: 0;left: 0;width: 100vw;z-index: 1}
+  #header{position: fixed;top: 0;left: 0;width: 100vw;z-index: 1;border-bottom: 1px solid #ddd;}
+  #header /deep/{
+    .is-left{flex:0 0 62%}
+    .is-right{flex:0 0 38%}
+  }
+  #headerLeft{display: flex;justify-content: space-between;}
   #function{
     i{font-size: 28px;color: $main_green}
     .closeBtn{text-align: center}
@@ -155,4 +166,6 @@ export default {
     }
 
   }
+  #backIcon /deep/{span{color: $main_green;font-weight: bold}}
+  .index #backIcon{visibility: hidden}
 </style>

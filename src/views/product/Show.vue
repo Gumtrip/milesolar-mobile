@@ -78,11 +78,10 @@ export default {
     .contentContainer /deep/{
       img{max-width: 100%;max-height: 100%}
     }
-    #inquiryBtn{background: $main_green}
     .BtnContainer{text-align: right}
     #productImages{width: 100%;height: 32vh}
     .descTitles /deep/{margin-bottom: 10px;
-      .mint-tab-item-label{font-size: 14px;}
+      .mint-tab-item-label{font-size: 16px;}
       .is-selected{border-bottom-color: $main_green;
         color: $main_green;}
     }

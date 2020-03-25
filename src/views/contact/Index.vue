@@ -1,5 +1,5 @@
 <template>
-  <div id="MsgBox" class="mainBox">
+  <div id="MsgBox" class="wrapper">
     <div id="contactInfo">
       <h4 class="text_center">Contact Info</h4>
       <mt-cell value="info@milesolar.com" to="mailto:info@milesolar.com">
@@ -28,7 +28,7 @@
 
     <h2 class="text_center">Message</h2>
     <h3>If You Have Any Suggestions or Question For Us.Please Contact Us.</h3>
-    <div>
+    <div id="contact_form">
       <mt-field v-model="form.name" class="input required" :attr="{required:true}" label="Name:" placeholder="Please Input Your Name">
       </mt-field>
       <mt-field v-model="form.phone" class="input" label="Mobile:" placeholder="Please Input Your Mobile" type="tel">
@@ -115,7 +115,7 @@ export default {
     h2{margin-bottom: 10px}
     h3{margin-bottom: 20px;font-size: 16px;color: #666;padding-left:  10px}
     p{padding-left: 10px;color: #555}
-    .submitBtn{margin-top: 10px}
+    .submitBtn{margin-top: 10px;}
   }
   #productInfo{margin-bottom: 10px;box-sizing: border-box;;
     #product{display: flex;
@@ -132,4 +132,5 @@ export default {
     h4{margin-bottom: 10px;font-size: 24px}
     color: #555;
   }
+  #contact_form{margin-bottom: 20px}
 </style>
