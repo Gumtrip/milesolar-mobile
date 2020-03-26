@@ -18,7 +18,7 @@ export default {
       navList: [
         { title: 'PRODUCTS', url: '/products' },
         { title: 'ABOUT US', url: '/' },
-        { title: 'CONTACT US', url: '/' }
+        { title: 'CONTACT US', url: '/contact_us' }
       ]
     }
   },

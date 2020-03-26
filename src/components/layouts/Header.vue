@@ -15,7 +15,7 @@
       </div>
 
       <div id="function" slot="right">
-        <span id="search" @click="toggleSearch(true)"><i class="fa fa-search"></i></span>
+        <!--        <span id="search" @click="toggleSearch(true)"><i class="fa fa-search"></i></span>-->
         <span v-show="!popNav" id="list" @click="toggleNav(true)"><i class="fa fa-list"></i></span>
         <span v-show="popNav" class="closeBtn" @click="toggleNav(false)"><i class="fa fa-close"></i></span>
       </div>
@@ -57,7 +57,8 @@ export default {
       showMask: false, // 遮罩层
       navList: [
         { title: 'Home', url: '/' },
-        { title: 'Product', url: '/products' }
+        { title: 'Product', url: '/products' },
+        { title: 'News', url: '/articles' }
       ]
     }
   },

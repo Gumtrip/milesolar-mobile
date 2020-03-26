@@ -1,5 +1,6 @@
 <template>
   <div id="MsgBox" class="wrapper">
+    <Bread :breads="breadList"></Bread>
     <div id="contactInfo">
       <h4 class="text_center">Contact Info</h4>
       <mt-cell value="info@milesolar.com" to="mailto:info@milesolar.com">
@@ -47,9 +48,11 @@
 
 <script>
 import { MessageBox } from 'mint-ui'
+import Bread from '@/components/utils/BreadCrumb'
+
 export default {
   name: 'Index',
-  components: {},
+  components: { Bread },
   data() {
     return {
       form: {
@@ -61,7 +64,10 @@ export default {
         skype: '',
         msg: ''
       },
-      product: []
+      product: [],
+      breadList: [
+        { title: 'Products', url: '/products' }
+      ]
     }
   },
   computed: {},
@@ -70,6 +76,7 @@ export default {
     this.form.product_id = query.product_id
 
     if (this.form.product_id) {
+      console.log(this.$router)
       this.getProduct(this.form.product_id)
     }
   },

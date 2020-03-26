@@ -20,4 +20,5 @@ export default {
 <style lang="scss">
   @import './styles/normalize.css';
   @import './styles/custom.scss';
+  #app{max-width: 750px;margin: 0 auto}
 </style>

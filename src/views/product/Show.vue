@@ -1,5 +1,7 @@
 <template>
   <div class="wrapper">
+    <Bread :breads="breadList"></Bread>
+
     <section id="picGallery" class="proSection">
       <mt-swipe id="productImages" :show-indicators="false">
         <mt-swipe-item v-for="(img,key) in product.mid_image_group" :key="key" class="picBox">
@@ -40,14 +42,19 @@
 </template>
 
 <script>
+import Bread from '@/components/utils/BreadCrumb'
 export default {
   name: 'Show',
-  components: {},
+  components: { Bread },
   data() {
     return {
       selected: 'info_0_m',
       product: '',
-      id: null
+      id: null,
+      breadList: [
+        { title: 'Products', url: '/products' }
+      ]
+
     }
   },
   computed: {},

@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <Bread :breads="breadList"></Bread>
     <h3 id="cateTitle" v-text="cateTitle"></h3>
     <section id="filter">
       <button type="button" @click="showPopup">
@@ -31,11 +32,12 @@
 
 <script>
 import Loading from '@/components/utils/Loading'
+import Bread from '@/components/utils/BreadCrumb'
 import Cate from './Cate'
 export default {
   name: 'List',
   components: {
-    Loading, Cate
+    Loading, Cate, Bread
   },
   data() {
     return {
@@ -45,7 +47,10 @@ export default {
       more_data: true,
       page: 1,
       postData: {},
-      popupVisible: false
+      popupVisible: false,
+      breadList: [
+        { title: 'Products', url: '/products' }
+      ]
     }
   },
   computed: {},
