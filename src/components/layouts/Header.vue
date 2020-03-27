@@ -58,7 +58,8 @@ export default {
       navList: [
         { title: 'Home', url: '/' },
         { title: 'Product', url: '/products' },
-        { title: 'News', url: '/articles' }
+        { title: 'News', url: '/articles' },
+        { title: 'Cases', url: '/cases' }
       ]
     }
   },

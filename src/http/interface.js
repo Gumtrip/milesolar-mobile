@@ -143,6 +143,20 @@ export const article = (id, params) => {
     params: params
   })
 }
+export const samples = (params) => {
+  return axios({
+    url: 'samples',
+    method: 'get',
+    params: params
+  })
+}
+export const sample = (id, params) => {
+  return axios({
+    url: 'samples/' + id,
+    method: 'get',
+    params: params
+  })
+}
 // 获取 Token
 const getToken = async() => {
   // 从缓存中取出 Token
@@ -192,6 +206,8 @@ export default {
   productCategoryTree,
   article,
   articles,
+  samples,
+  sample,
   storeMsg
 }
 

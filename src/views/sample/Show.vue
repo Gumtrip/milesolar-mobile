@@ -1,12 +1,11 @@
 <template>
   <div class="wrapper">
     <Bread :breads="breadList"></Bread>
-    <h1 id="articleTitle" v-text="article.title"></h1>
+    <h1 id="sampleTitle" v-text="sample.title"></h1>
     <p id="ex_msg">
-      created at:<span v-text="article.create_date"></span>
+      created at:<span v-text="sample.create_date"></span>
     </p>
-    <div id="desc" class="description" v-html="article.desc">
-    </div>
+    <div id="desc" class="description" v-html="sample.desc"></div>
   </div>
 </template>
 
@@ -17,10 +16,10 @@ export default {
   components: { Bread },
   data() {
     return {
-      article: '',
+      sample: '',
       id: null,
       breadList: [
-        { title: 'News', url: '/articles' }
+        { title: 'Cases', url: '/cases' }
       ]
     }
   },
@@ -28,13 +27,13 @@ export default {
   created() {
     const params = this.$route.params
     this.id = params.id
-    this.getArticle(this.id)
+    this.getSamples(this.id)
   },
 
   methods: {
-    async getArticle(id) {
-      this.$api.article(id).then((response) => {
-        this.article = response.data
+    async getSamples(id) {
+      this.$api.sample(id).then((response) => {
+        this.sample = response.data
       })
     }
   }
@@ -42,8 +41,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  #articleTitle{font-size: 16px;
-    border-bottom: 1px solid #ddd;text-align: center;
+  #sampleTitle{font-size: 20px;
+    text-align: center;
     padding-bottom: 10px;
     color: #222;}
   #ex_msg{margin: 0 0 10px;text-align: center}

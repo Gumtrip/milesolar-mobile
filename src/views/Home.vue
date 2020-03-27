@@ -29,7 +29,7 @@
       </ul>
     </section>
     <section v-if="aboutsUs" id="aboutUs">
-      <div id="imgBox">
+      <div v-if="aboutsUs[0]" id="imgBox">
         <div id="imgZoom" class="flexPic">
           <img :src="aboutsUs[0].sm_img" alt="">
         </div>

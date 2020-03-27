@@ -27,13 +27,13 @@
       </mt-navbar>
       <mt-tab-container v-if="product.info_group" v-model="selected" class="contentContainer">
         <mt-tab-container-item id="info_0_m">
-          <div v-html="product.info_group.info_0_m"></div>
+          <div class="description" v-html="product.info_group.info_0_m"></div>
         </mt-tab-container-item>
         <mt-tab-container-item id="info_1_m">
-          <div v-html="product.info_group.info_1_m"></div>
+          <div class="description" v-html="product.info_group.info_1_m"></div>
         </mt-tab-container-item>
         <mt-tab-container-item id="info_2_m">
-          <div v-html="product.info_group.info_2_m"></div>
+          <div class="description" v-html="product.info_group.info_2_m"></div>
         </mt-tab-container-item>
       </mt-tab-container>
     </section>

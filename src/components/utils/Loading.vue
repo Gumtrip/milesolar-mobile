@@ -32,10 +32,10 @@ export default {
   watch: {
     moreData: function(newVal, oldVal) {
       if (newVal === false) {
-        Toast({
-          message: 'No More Data!',
-          position: 'bottom'
-        })
+        // Toast({
+        //   message: 'No More Data!',
+        //   position: 'bottom'
+        // })
       }
     }
   },
