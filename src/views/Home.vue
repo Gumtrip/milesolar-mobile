@@ -114,7 +114,7 @@ export default {
     },
     getNews() {
       this.$api.articles({
-        is_index: 1,
+        filter: { is_index: 1 },
         take: 3
       }).then((response) => {
         this.articles = response.data
