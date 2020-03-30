@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/variables";
+  @import "../../../styles/variables";
 
   #proCate{height: 100vh;width: 100vw;z-index: 3;left: 0;;padding-top: 50px;box-sizing: border-box;
     ul{background: #fff;height: 100%}

@@ -33,7 +33,7 @@
 <script>
 import Loading from '@/components/utils/Loading'
 import Bread from '@/components/utils/BreadCrumb'
-import Cate from './Cate'
+import Cate from './components/Cate'
 export default {
   name: 'List',
   components: {
