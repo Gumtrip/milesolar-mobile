@@ -106,13 +106,15 @@ export default {
   methods: {
     getCategories() {
       this.$api.productCategories({
-        depth: 1
+        depth: 1,
+        sort: 'default'
       }).then((response) => {
         this.product_categories = response.data
       })
     },
     getNews() {
       this.$api.articles({
+        is_index: 1,
         take: 3
       }).then((response) => {
         this.articles = response.data
