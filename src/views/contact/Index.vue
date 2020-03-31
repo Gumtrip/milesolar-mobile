@@ -3,15 +3,14 @@
     <Bread :breads="breadList"></Bread>
     <div id="contactInfo">
       <h4 class="text_center">Contact Info</h4>
-      <mt-cell value="info@milesolar.com" to="mailto:info@milesolar.com">
-        <span slot="title"><i class="fa fa-envelope"></i> Email:</span>
-      </mt-cell>
-      <mt-cell value="008613889943867" to="tel:008613889943867">
-        <span slot="title"><i class="fa fa-mobile"></i> Phone:</span>
-      </mt-cell>
-      <mt-cell value="13812341234@qq.com">
-        <span slot="title"><i class="fa fa-skype"></i> Skype:</span>
-      </mt-cell>
+      <div v-for="(item,key) in contactList" :key="key">
+        <mt-cell v-if="item.url" :value="item.value" :to="item.url">
+          <span slot="title"><i class="fa" :class="item.icon"></i> <span class="label" v-text="item.label+':'"></span></span>
+        </mt-cell>
+        <mt-cell v-else :value="item.value">
+          <span slot="title"><i class="fa" :class="item.icon"></i> <span class="label" v-text="item.label+':'"></span></span>
+        </mt-cell>
+      </div>
     </div>
 
     <section v-if="Object.keys(product).length > 0" id="productInfo">
@@ -54,6 +53,11 @@ export default {
   components: { Bread },
   data() {
     return {
+      contactList: [
+        { label: 'Email', icon: 'fa-envelope', value: 'info@milesolar.com', url: 'mailto:info@milesolar.com' },
+        { label: 'Phone', icon: 'fa-mobile', value: '008613889943867', url: 'tel:008613889943867' },
+        { label: 'Skype', icon: 'fa-skype', value: '13812341234@qq.com' }
+      ],
       form: {
         product_id: null,
         product_info: null,
@@ -70,6 +74,11 @@ export default {
     }
   },
   computed: {},
+  watch: {
+    $route() {
+      this.$router.go(0)
+    }
+  },
   created() {
     const query = this.$route.query
     this.form.product_id = query.product_id
