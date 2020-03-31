@@ -2,7 +2,11 @@
   <div class="wrapper">
     <Bread :breads="breadList"></Bread>
     <section>
-      <ul v-if="samples">
+      <ul
+        v-infinite-scroll="getSamples"
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="10"
+      >
         <li v-for="(sample,key) in samples" :key="key" class="sample">
           <router-link :to="{name:'sample.show',params:{id:sample.id}}">
             <div class="img flexPic">

@@ -2,7 +2,11 @@
   <div class="wrapper">
     <Bread :breads="breadList"></Bread>
     <section>
-      <ul v-if="articles">
+      <ul
+        v-infinite-scroll="getArticles"
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="10"
+      >
         <li v-for="(article,key) in articles" :key="key" class="article">
           <router-link :to="{name:'article.show',params:{id:article.id}}">
             <div class="img flexPic">
