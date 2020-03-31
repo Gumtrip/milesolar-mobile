@@ -35,7 +35,7 @@
       <div id="menu">
         <ul>
           <li v-for="(nav,key) in navList" :key="key" class="list" @click="closeAll">
-            <router-link :to="nav.url" v-text="nav.title">Home</router-link>
+            <router-link :to="nav.url" v-text="nav.title"></router-link>
           </li>
         </ul>
       </div>

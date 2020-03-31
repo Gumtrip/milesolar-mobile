@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul v-if="list" id="breakCrumb">
+    <ul v-if="list" id="breadCrumb">
       <li><router-link :to="'/'">Home <span>&nbsp; &gt;&nbsp;</span></router-link></li>
       <li v-for="(bread,key) in breads" :key="key">
         <router-link :to="bread.url" v-text="bread.title"></router-link>
@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  #breakCrumb{display: flex;height: 25px;line-height: 25px;font-size: 16px;color: #888;margin: 10px 0;flex-wrap: wrap;
+  #breadCrumb{display: flex;height: 25px;line-height: 25px;margin: 10px 0;flex-wrap: wrap;
+    a{font-size: 16px;color: #888;}
   }
 </style>

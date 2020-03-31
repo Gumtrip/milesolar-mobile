@@ -35,7 +35,6 @@
       <mt-field v-model="form.phone" class="input" label="Mobile:" placeholder="Please Input Your Mobile" type="tel">
       </mt-field>
       <mt-field v-model="form.email" class="input required" :attr="{required:true}" label="Email:" placeholder="Please Input Your Email" type="email">
-
       </mt-field>
       <mt-field v-model="form.skype" class="input" label="Skype:" placeholder="Please Input Your Skype">
       </mt-field>
@@ -76,7 +75,6 @@ export default {
     this.form.product_id = query.product_id
 
     if (this.form.product_id) {
-      console.log(this.$router)
       this.getProduct(this.form.product_id)
     }
   },

@@ -1,20 +1,21 @@
 <template>
-  <div>
-    <div id="proCate" :class="{show:popCate}" class="popModal trans">
-      <ul v-if="product_categories">
-        <li @click="clickCate"><h4 class="firstCate"></h4><i class="fa fa-chevron-left left"></i></li>
-        <li @click="closeAll"><router-link :to="{name:'products'}"><h4 class="firstCate">All</h4></router-link></li>
-        <li v-for="(cate,key) in product_categories" :key="key">
-          <h4 class="firstCate" @click="toggleSecCate(key)" v-text="cate.title"></h4>
-          <div v-if="cate.children" :class="{show:key===current}" class="secCate trans" @click="clickCate">
-            <div v-for="(sec,secKey) in cate.children" :key="secKey">
-              <router-link :to="{name:'products',query:{category_id:sec.id}}" v-text="sec.title"></router-link>
-            </div>
-          </div>
-          <i class="fa fa-chevron-right trans right" :class="{show:key===current}"></i>
-        </li>
-      </ul>
-    </div>
+  <div id="proCate" :class="{show:popCate}" class="popModal trans">
+    <ul v-if="product_categories">
+      <li @click="clickCate"><h4 class="firstCate"></h4><i class="fa fa-chevron-left left"></i></li>
+      <li @click="closeAll"><router-link :to="{name:'products'}"><h4 class="firstCate">All</h4></router-link></li>
+      <li v-for="(cate,key) in product_categories" :key="key">
+        <h4 class="firstCate" @click="toggleSecCate(key)" v-text="cate.title"></h4>
+        <div v-if="cate.children" :class="{show:key===current}" class="secCate trans" @click="clickCate">
+          <h5>
+            <router-link :to="{name:'products',query:{category_id:cate.id}}">ALL</router-link>
+          </h5>
+          <h5 v-for="(sec,secKey) in cate.children" :key="secKey">
+            <router-link :to="{name:'products',query:{category_id:sec.id}}" v-text="sec.title"></router-link>
+          </h5>
+        </div>
+        <i class="fa fa-chevron-right trans right" :class="{show:key===current}"></i>
+      </li>
+    </ul>
   </div>
 </template>
 

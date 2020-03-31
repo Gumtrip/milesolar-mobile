@@ -36,6 +36,5 @@ export default {
   #footer{background: #343434;padding-top: 10px;overflow: hidden;
     li{border-bottom: 1px solid $main_green;padding-bottom:10px;margin-bottom: 10px}
     a{color: #fff;font-size: 18px;text-transform: uppercase;}
-
   }
 </style>

@@ -63,9 +63,8 @@ export default {
   },
   created() {
     this.postData.category_id = this.$route.query.category_id
-    this.getProducts()
+    this.getProducts()// 第一次需要手动触发
   },
-
   methods: {
     async getProducts() {
       if (this.more_data) {
@@ -109,10 +108,11 @@ export default {
   #contentBox{
     margin-top:34px ;
     box-sizing: border-box;;display: flex;flex-wrap: wrap;
-
-    .item{width: 50%;box-sizing: border-box;margin-bottom: 10px;padding:0 5px;overflow: hidden;
+    .item{flex:0 0 50%;box-sizing: border-box;margin-bottom: 10px;;overflow: hidden;
       a{display: block;border: 1px solid #eee;padding-bottom: 10px}
     }
+    .item:nth-child(even){padding-left: 5px}
+    .item:nth-child(odd){padding-right: 5px}
     .pic{margin-bottom: 10px;height: 168px;}
     .title{font-size: 16px;color: #000;width: 90%;margin: 0 auto;font-family: "Open Sans Bold";height: 56px;overflow: hidden}
   }
